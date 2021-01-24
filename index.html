@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCko5oY9-5y5yklqDx9tDnLkUzgPgXWeys&callback=initMap&libraries=&v=weekly"
+	  defer
+    ></script>
+    <style type="text/css">
+	/*https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood&key=AIzaSyCko5oY9-5y5yklqDx9tDnLkUzgPgXWeys*/
+             /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+       .mapcontainaer{
+         display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        height: 100%;
+ 
+       }
+      .map {
+        height: 70%;
+        margin: 2%;
+   
+      }
+      
+       #map2 {
+        height: 100%;
+   
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 95%;
+        margin: 0;
+        background-color: rgb(60, 60, 60); ">rgb(60, 60, 60)";
+        padding-top: 0.5%;
+		
+      }
+    </style>
+    <script>
+      function initMap() {
+		  const marker1={lat: 41.85, lng: -87.65}
+		  const directionsService = new google.maps.DirectionsService();
+		  const directionsRenderer = new google.maps.DirectionsRenderer();
+		  const map = new google.maps.Map(document.getElementById("map"), {
+			zoom: 6,
+			center: marker1,
+		  });
+		  const map2 = new google.maps.Map(document.getElementById("map2"), {
+			zoom: 6,
+			center: marker1,
+		  });
+		   const map3 = new google.maps.Map(document.getElementById("map3"), {
+			zoom: 6,
+			center: marker1,
+			  });
+			const marker = new google.maps.Marker({
+			position: marker1,
+			map: map3,
+  });
+
+		  directionsRenderer.setMap(map2);
+		  calculateAndDisplayRoute(directionsService, directionsRenderer);
+		  
+		}
+
+		function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+			  directionsService.route(
+			{
+			  origin: document.getElementById("start").value,
+			  destination: document.getElementById("end").value,
+			  travelMode: google.maps.TravelMode.DRIVING,
+			}, (response, status) => {
+			  if (status === "OK") {
+				directionsRenderer.setDirections(response);
+			} else {
+				window.alert("Directions request failed due to " + status);
+			  }
+			});
+		}
+    </script>
+  </head>
+  <body>
+  <div class="mapcontainaer">
+  <div class="map" id="map"></div>
+  <div class="map">
+    <div id="map2"></div>
+    <div>
+      <strong>Start: </strong>
+      <select id="start">
+        <option value="penn station, new york, ny">Penn Station</option>
+      </select>
+      <strong>End: </strong>
+      <select id="end" onchange="calcRoute();">
+        <option value="260 Broadway New York NY 10007">City Hall</option>
+        </select>
+    </div>
+  </div>
+  <div class="map" id="map3"></div>
+  </div>
+
+  </body>
+</html>
