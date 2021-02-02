@@ -604,3 +604,40 @@ https://maps.googleapis.com/maps/api/directions/json?origin=Dubai%20Mall&destina
    "status" : "OK"
 }
 ```
+## 3. Places API (JSON Return)
+https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJS-JnijRDXz4R4rfO4QLlRf8&fields=name,rating,formatted_phone_number,opening_hours,price_level&key=AIzaSyA5a1FoKmbmQ1djPh6pRx7oiknBf3ACNOE
+
+```json
+{
+   "html_attributions" : [],
+   "result" : {
+      "formatted_phone_number" : "04 888 8888",
+      "name" : "Burj Khalifa",
+      "obfuscated_type" : [],
+      "opening_hours" : {
+         "open_now" : true,
+         "periods" : [
+            {
+               "open" : {
+                  "day" : 0,
+                  "time" : "0000"
+               }
+            }
+         ],
+         "weekday_text" : [
+            "Monday: Open 24 hours",
+            "Tuesday: Open 24 hours",
+            "Wednesday: Open 24 hours",
+            "Thursday: Open 24 hours",
+            "Friday: Open 24 hours",
+            "Saturday: Open 24 hours",
+            "Sunday: Open 24 hours"
+         ]
+      },
+      "rating" : 4.7
+   },
+   "status" : "OK"
+}
+
+```
+
