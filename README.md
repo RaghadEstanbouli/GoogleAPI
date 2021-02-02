@@ -4,8 +4,10 @@
 ## My API Key
 AIzaSyA5a1FoKmbmQ1djPh6pRx7oiknBf3ACNOE
 
-## Adding a MyMaps to a page results in an error?
+## Embed My Maps to a web page
 https://RaghadEstanbouli.github.io/GoogleAPI
+
+## 1. JavaScript API (HTML Interactive Map):
 
 ## Example URL sharing:
 
