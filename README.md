@@ -1,6 +1,8 @@
 # GoogleAPI
-# Geom99
-Fleming College Geom99 repository of examples and guides
+# Check Lists 1+2
+
+## My API Key
+AIzaSyA5a1FoKmbmQ1djPh6pRx7oiknBf3ACNOE
 
 ## Adding a MyMaps to a page results in an error?
 https://RaghadEstanbouli.github.io/GoogleAPI
