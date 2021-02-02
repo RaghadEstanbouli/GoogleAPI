@@ -64,34 +64,70 @@
 			center: marker1,
 			mapTypeId:google.maps.MapTypeId.TERRAIN,
 		  });
+			let Burjkhalifa= {lat:25.197525,lng: 55.274288}
 		   const map3 = new google.maps.Map(document.getElementById("map3"), {
-			zoom: 6,
-			center: marker1,
+			zoom: 15,
+			
+			center:Burjkhalifa
+			
 			  });
-			const marker = new google.maps.Marker({
-			position: marker1,
+		const marker = new google.maps.Marker({
+			position: Burjkhalifa,
 			map: map3,
   });
-
+		  
 		  directionsRenderer.setMap(map2);
 		  calculateAndDisplayRoute(directionsService, directionsRenderer);
 		  
 		}
 
-		function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+		
+		
+		function calculateAndDisplayRoute(directionsService,directionsRenderer)
+		{
 			  directionsService.route(
-			{
-			  origin: document.getElementById("start").value,
+			{origin: document.getElementById("start").value,
 			  destination: document.getElementById("end").value,
-			  travelMode: google.maps.TravelMode.DRIVING,
-			}, (response, status) => {
+			  travelMode: google.maps.TravelMode.DRIVING,},
+			(response, status) => {
 			  if (status === "OK") {
 				directionsRenderer.setDirections(response);
 			} else {
 				window.alert("Directions request failed due to " + status);
 			  }
-			});
+			}
+			);
 		}
+		
+		/*function Place_Details(map3){
+			const request = {
+					placeId: "ChIJS-JnijRDXz4R4rfO4QLlRf8",
+					fields: ["name", "formatted_address", "place_id", "geometry"],
+				  };
+			const infowindow = new google.maps.InfoWindow();
+			const service = new google.maps.places.PlacesService(map3);
+			service.getDetails(request, (place, status) => {
+			if (status === google.maps.places.PlacesServiceStatus.OK) {
+			  const marker = new google.maps.Marker({
+				map: map3,
+				position: place.geometry.location,
+			  });
+			  google.maps.event.addListener(marker, "click", function () {
+				infowindow.setContent(
+				  "<div><strong>" +
+					place.name +
+					"</strong><br>" +
+					"Place ID: " +
+					place.place_id +
+					"<br>" +
+					place.formatted_address +
+					"</div>"
+				);
+				infowindow.open(map3, this);
+			  });
+			}
+		  });
+		}*/
     </script>
   </head>
   <body>
@@ -103,11 +139,11 @@
     <div>
       <strong>Start: </strong>
       <select id="start">
-        <option value="penn station, new york, ny">Penn Station</option>
+        <option value="sama Tower Abu Dhabi">Penn Station</option>
       </select>
       <strong>End: </strong>
       <select id="end" onchange="calcRoute();">
-        <option value="260 Broadway New York NY 10007">City Hall</option>
+        <option value="Dubai Mall">Dubai Mall</option>
         </select>
     </div>
   </div>
