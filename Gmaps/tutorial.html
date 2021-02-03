@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple Map</title>
+    <title>Tutorial 1 + 2</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCko5oY9-5y5yklqDx9tDnLkUzgPgXWeys&callback=initMap&libraries=&v=weekly"
@@ -15,7 +15,7 @@
        * element that contains the map. */
        .mapcontainaer{
          display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         height: 70%;
  
        }
@@ -25,7 +25,7 @@
    
       }
       
-       #map2,#map, #map3 {
+       #map2,#map{
         height: 100%;
    
       }
@@ -47,7 +47,7 @@
     <script>
       function initMap() {
 		const Tutorial1={lat:45.504891570184235, lng:-73.57710280253794};
-		const Tutorial2={ lat: 51.588931597188335, lng: -86.68347862297843};
+		const Tutorial2={ lat: 51.588931597188335,lng: -86.68347862297843};
 		const Burjkhalifa= {lat:25.197525,lng: 55.274288};
 
 		const map = new google.maps.Map(document.getElementById("map"), {
@@ -228,10 +228,7 @@
 		<p>Tutorial 2:</p>
 		<div id="map2"></div>
 	</div>
-	<div class="map">
-		<p>Tutorial 3:</p>
-		<div id="map3"></div>
-	</div>
+	
   </div>
   
 
