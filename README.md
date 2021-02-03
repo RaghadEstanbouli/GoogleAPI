@@ -8,9 +8,10 @@ AIzaSyA5a1FoKmbmQ1djPh6pRx7oiknBf3ACNOE
 ## 1. JavaScript API (HTML Interactive Map):
 https://RaghadEstanbouli.github.io/GoogleAPI
 
-## Example URL sharing:
+
 ## 2. Directions API (JSON Return)
 https://maps.googleapis.com/maps/api/directions/json?origin=Dubai%20Mall&destination=sama%20Tower%20Abu%20Dhabi&&waypoints=via:Dubai+Mall&key=AIzaSyCko5oY9-5y5yklqDx9tDnLkUzgPgXWeys
+
 ### Result: 
 
 ```json
@@ -607,6 +608,7 @@ https://maps.googleapis.com/maps/api/directions/json?origin=Dubai%20Mall&destina
 ## 3. Places API (JSON Return)
 https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJS-JnijRDXz4R4rfO4QLlRf8&fields=name,rating,formatted_phone_number,opening_hours,price_level&key=AIzaSyA5a1FoKmbmQ1djPh6pRx7oiknBf3ACNOE
 
+### Result:
 ```json
 {
    "html_attributions" : [],
@@ -648,5 +650,5 @@ https://raghadestanbouli.github.io/GoogleAPI/Gmaps/tutorial.html
 
 https://raghadestanbouli.github.io/GoogleAPI/Gmaps/tutorial3a.html
 https://raghadestanbouli.github.io/GoogleAPI/Gmaps/tutorial3b.html
-https://raghadestanbouli.github.io/GoogleAPI/Gmaps/tutorial3c.html
+https://raghadestanbouli.github.io/GoogleAPI/Gmaps/Tutorial3c.html
 
