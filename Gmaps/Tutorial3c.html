@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <title>Tutorial3c</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+	defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCko5oY9-5y5yklqDx9tDnLkUzgPgXWeys&libraries=visualization&callback=initMap">
+	</script>
+	<script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
+	 <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
+    <style type="text/css">
+	   
+	   
+	   .mapcontainaer{
+         height: 70%;
+ 
+       }
+ 
+      
+       #map {
+        height: 100%;
+   
+      }
+	  p{
+		color:white;
+		font-size: 3em;
+		padding:1%;
+	  }
+
+      
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background-color: rgb(60, 60, 60);
+        padding-top: 0.5%;
+		
+      }
+    </style>
+    <script>
+	let map
+	const Tutorial3c={lat: -33.865427, lng: 151.196123};
+      
+	  function initMap() {
+			map = new google.maps.Map(document.getElementById("map"), {
+			zoom: 2,
+			center: Tutorial3c,
+			mapTypeId: "terrain",
+		});
+		
+			
+		const script = document.createElement("script");
+		script.src =    "https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js";
+		document.getElementsByTagName("head")[0].appendChild(script);
+		}
+		
+		
+		
+	function eqfeed_callback(results) {
+	  const heatmapData = [];
+	  for (let i = 0; i < results.features.length; i++) {
+		const coords = results.features[i].geometry.coordinates;
+		const latLng = new google.maps.LatLng(coords[1], coords[0]);
+		heatmapData.push(latLng);
+		}
+	const heatmap = new google.maps.visualization.HeatmapLayer({
+		data: heatmapData,
+		dissipating: false,
+		map: map,
+		});
+	}
+	
+
+    </script>
+  </head>
+  <body>
+  <div class="mapcontainaer">
+	<div class="map">
+		<p>Tutorial3c:</p>
+		<div id="map"></div>
+	</div>
+	</div>
+
+
+  </body>
+</html>
