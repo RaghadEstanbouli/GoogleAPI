@@ -640,6 +640,6 @@ https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJS-JnijRDXz4
 }
 
 ```
-## Tutorial 1+2+3
+## Tutorial 1+2
 
-https://raghadestanbouli.github.io/GoogleAPI/GoogleAPI/Gmaps/tutorial.html
+https://raghadestanbouli.github.io/GoogleAPI/Gmaps/tutorial.html
