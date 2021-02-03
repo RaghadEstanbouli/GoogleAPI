@@ -26,7 +26,6 @@
    
       }
 
-      /* Optional: Makes the sample page fill the window. */
       html,
       body {
         height: 100%;
@@ -97,35 +96,7 @@
 			);
 		}
 		
-		/*function Place_Details(map3){
-			const request = {
-					placeId: "ChIJS-JnijRDXz4R4rfO4QLlRf8",
-					fields: ["name", "formatted_address", "place_id", "geometry"],
-				  };
-			const infowindow = new google.maps.InfoWindow();
-			const service = new google.maps.places.PlacesService(map3);
-			service.getDetails(request, (place, status) => {
-			if (status === google.maps.places.PlacesServiceStatus.OK) {
-			  const marker = new google.maps.Marker({
-				map: map3,
-				position: place.geometry.location,
-			  });
-			  google.maps.event.addListener(marker, "click", function () {
-				infowindow.setContent(
-				  "<div><strong>" +
-					place.name +
-					"</strong><br>" +
-					"Place ID: " +
-					place.place_id +
-					"<br>" +
-					place.formatted_address +
-					"</div>"
-				);
-				infowindow.open(map3, this);
-			  });
-			}
-		  });
-		}*/
+		
     </script>
   </head>
   <body>
