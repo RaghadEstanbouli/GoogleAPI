@@ -652,3 +652,7 @@ https://raghadestanbouli.github.io/GoogleAPI/Gmaps/tutorial3a.html
 https://raghadestanbouli.github.io/GoogleAPI/Gmaps/tutorial3b.html
 https://raghadestanbouli.github.io/GoogleAPI/Gmaps/Tutorial3c.html
 
+## Option1:
+
+https://raghadestanbouli.github.io/GoogleAPI/Gmaps/option1.html
+
