@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <title>Tutorial3b</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCko5oY9-5y5yklqDx9tDnLkUzgPgXWeys&callback=initMap&libraries=&v=weekly"
+	  defer
+    ></script>
+	<script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
+	<script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
+    <style type="text/css">
+	   
+	   
+	   .mapcontainaer{
+         height: 70%;
+ 
+       }
+ 
+      
+       #map {
+        height: 100%;
+   
+      }
+	  p{
+		color:white;
+		font-size: 3em;
+		padding:1%;
+	  }
+
+      
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background-color: rgb(60, 60, 60);
+        padding-top: 0.5%;
+		
+      }
+    </style>
+
+    <script>
+	let map
+	const Tutorial3b={lat:2.8, lng:-187.3};
+      
+    function initMap() {
+			map = new google.maps.Map(document.getElementById("map"), {
+			zoom: 2,
+			center: Tutorial3b,
+			mapTypeId: "terrain",
+		});
+		
+			
+		const script = document.createElement("script");
+		script.src =    "https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js";
+		document.getElementsByTagName("head")[0].appendChild(script);
+		map.data.setStyle((feature) => {
+		const magnitude = feature.getProperty("mag");
+		return {
+		  icon: getCircle(magnitude),
+			};
+		});
+		
+		
+		
+		
+		}
+
+    function getCircle(magnitude) {
+		  return {
+			path: google.maps.SymbolPath.CIRCLE,
+			fillColor: "red",
+			fillOpacity: 0.2,
+			scale: Math.pow(2, magnitude) / 2,
+			strokeColor: "white",
+			strokeWeight: 0.5,
+		  };
+		}
+
+    const eqfeed_callback = function (results) {
+		  			map.data.addGeoJson(results);  
+		}
+	
+
+    </script>
+  </head>
+  <body>
+  <div class="mapcontainaer">
+	<div class="map">
+		<p>Tutorial3b:</p>
+		<div id="map"></div>
+	</div>
+	</div>
+
+
+  </body>
+</html>
